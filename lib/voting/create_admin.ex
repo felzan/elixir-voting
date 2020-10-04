@@ -10,7 +10,7 @@ defmodule Voting.CreateAdmin do
   def run(params) do
     %Admin{}
     |> cast(params, [:name, :email, :password])
-    |> validate_required([:name, :email])
+    |> validate_required([:name, :email, :password])
     |> put_password()
     |> Repo.insert()
   end
